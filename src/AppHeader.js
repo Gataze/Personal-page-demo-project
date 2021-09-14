@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import img from './delphinium.jpg'
 
 const AppHeader = () => {
     
@@ -10,6 +10,7 @@ const AppHeader = () => {
                 <h2>Graphic Design</h2>
                 <h2>& Illustrations</h2>
                 <p>Natalia Brzozowska</p>
+                <div></div>
             </AppWrapper>
         </AppHeaderStyles>
         </>
@@ -24,9 +25,13 @@ position: relative;
 flex-flow: column;
 align-items: center;
 justify-content: center;
+
 height: 100vh;
 overflow: hidden;
-background: linear-gradient(135deg, rgba(0, 117, 116, 1) 0%, rgba(0, 117, 112, 1) 13%, rgba(0, 117, 112, 1) 44%, rgba(28, 106, 127, 1) 58%, rgba(139, 119, 181, 1) 60%, rgba(123, 6, 131, 1) 62%, rgba(33, 0, 33, 1) 66%, rgba(0, 0, 0, 1) 100%);
+/* background: linear-gradient(135deg, rgba(0, 117, 116, 1) 0%, rgba(0, 117, 112, 1) 13%, rgba(0, 117, 112, 1) 44%, rgba(28, 106, 127, 1) 58%, rgba(139, 119, 181, 1) 60%, rgba(123, 6, 131, 1) 62%, rgba(33, 0, 33, 1) 66%, rgba(0, 0, 0, 1) 100%); */
+background-image: url(${img});
+background-size: contain;
+background-position-x: center;
 
 &:before, &:after {
   position: absolute;
@@ -97,5 +102,6 @@ p {
   @media (min-width: 992px) {
         font-size: 26px;
     }
-}
+} 
 `
+
