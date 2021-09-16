@@ -1,12 +1,15 @@
+
 import styled from "styled-components"
 import img from './delphinium.jpg'
 
 
-const AppHeader = () => {
+const AppHeader = ({offsetY}) => {
+
+    
     
     return ( 
         <>
-        <AppHeaderStyles>
+        <AppHeaderStyles style={{ transform: `translateY(${ offsetY * 0.5}px)`}}>
             <AppWrapper>
                 <h2>Graphic Design</h2>
                 <h2>& Illustrations</h2>

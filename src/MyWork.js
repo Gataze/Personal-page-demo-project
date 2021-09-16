@@ -35,11 +35,56 @@ const MyWork = () => {
 
 const AppWrapper = styled.section`
     display: flex;
+    position: relative;
     flex-flow: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden; 
     background-color: #98787D;
+
+    &:before, &:after {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  opacity: 0.1;
+  color: black;
+  font-size: 96px;
+  font-weight: 800;
+  text-align: left;
+  @media (min-width: 768px) {
+      font-size: 126px;
+  }
+  @media (min-width: 1200px) {
+      font-size: 176px;
+  }
+}
+
+&:before {
+  content: 'ILLUSTRATIONS';
+  top: -5%;
+  right: 5%;
+  @media (min-width: 768px) {
+    right: 20%;
+  }
+  @media (min-width: 1200px) {
+    top: 0%;
+    right: -5%;
+  }
+}
+
+&:after {
+  content: 'PROJECTS';
+  bottom: -140px;
+  left: 10px;
+  @media (min-width: 768px) {
+    bottom: -7%;
+  }
+  @media (min-width: 1200px) {
+    bottom: -220px;
+    left: -70px;
+  }
+}
 `
 
 const Header = styled.h1`

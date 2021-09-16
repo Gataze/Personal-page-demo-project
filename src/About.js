@@ -7,22 +7,18 @@ const About = () => {
         <AboutWrapper>
             <AboutContainer >
             <AboutColumn>
-
                 <img src={lunaria} alt="" />
                 <p>Natalia Brzozowska</p>
                 <span>Grafik, Architekt, Ilustrator, Prepress Assistant, miłośniczka kwiatów.</span>
-
                 <Contact>
                     <p><span>Lo.</span>Szczecin, Polska</p>
                     <p><span>Em.</span>nataliaemiliabrzozowska@gmail.com</p>
                     <p><span>IG.</span>@herbie_nah</p>
                     <p><span>Be.</span>Behance.net/herbie_nah</p>
                 </Contact>
-
             </AboutColumn>
-
             <AboutColumn>
-                <h1>about.<p></p></h1>
+                <h1>o mnie.<p></p></h1>
                 <article>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos velit architecto dolorum autem atque, totam, debitis voluptatibus, earum asperiores dicta sequi quo pariatur alias molestias excepturi nesciunt. Nam, minima debitis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem nesciunt eos, consequuntur quia quas quidem debitis optio sunt assumenda eius quibusdam in pariatur dolore animi quos vitae nemo nihil distinctio!</p>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, nulla laudantium? Cupiditate, maiores ea maxime quidem dolorem quae vero, optio libero numquam tenetur eos praesentium voluptatum sit alias voluptate laborum?</p>
@@ -48,11 +44,8 @@ const About = () => {
                         </p>   
                     </div>  
                 </AboutQualifications>
-
             </AboutColumn>
-
             <AboutColumn>
-
                 <AboutSkills>
                     <h1>Skills</h1>
                     <div>
@@ -79,7 +72,6 @@ const About = () => {
                         <p>Reliability</p>
                     </div>
                 </AboutSkills>
-
             </AboutColumn>
             </AboutContainer>
         </AboutWrapper>
@@ -89,10 +81,37 @@ const About = () => {
 
 const AboutWrapper = styled.div`
     display: flex;
+    position: relative;
     box-sizing: border-box;
     height: 100vh;
     padding: 20px 0 0;
+    overflow: hidden;
     background-color: #98787D;
+
+   
+
+&:before {
+    content: 'about.';
+    position: absolute;
+    top: 220px;
+    right: 5%;
+    width: 600px;
+    height: 400px;
+    opacity: 0.1;
+    color: black;
+    font-size: 96px;
+    font-weight: 800;
+    text-align: left;
+    
+  @media (min-width: 768px) {
+    right: 20%;
+  }
+  @media (min-width: 1200px) {
+    top: 670px;
+    left: 950px;
+    font-size: 176px;
+  }
+}
 `
 
 const AboutContainer = styled.div`
@@ -145,7 +164,7 @@ const AboutColumn = styled.div`
         margin-top: 0;
         color: #EFADAD;
         font-size: 40px;
-        
+        white-space: nowrap;
         
 
         p {
