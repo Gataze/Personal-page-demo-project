@@ -4,7 +4,7 @@ import mapa from "./pomorzany.jpg"
 
 const Contact = () => {
     return ( 
-        <ContactWrapper>
+        <ContactWrapper id='contact'>
            
                 <ContactForm>
                     <h1>Formularz kontaktowy</h1>
@@ -22,18 +22,20 @@ const Contact = () => {
 const ContactWrapper = styled.section`
     display: flex;
     position: relative;
-   
     height: 80vh;
+    border-radius: 20px;
     background-image: url(${mapa});
     background-size: cover;
-    color: white;
-
+    color: #888888;
+    
+    
     h1 {
         align-self: flex-start;
-        margin-left: 70px;
+        margin-left: 60px;
         font-size: 36px;
         font-weight: 400;     
         text-transform: uppercase;
+        
     }
 
     &:before, &:after {
@@ -78,18 +80,25 @@ const ContactForm = styled.form`
     justify-content: center;
     width: 600px;
     margin: 80px 80px -60px auto ;
-    padding: 20px;
-    border: 1px solid black;
-    opacity: 0.95;
-    background: #aaaaaa;
+    padding: 15px;
+    border-radius: 20px;
+    opacity: .95;
+    background: #cccccc ;
 
     button {
         width: 30%;
-        margin: 60px; 
-        padding: 20px;
+        margin: 40px; 
+        padding: 15px;
         border: none;
         border-radius: 50px;
-        background: #234C50
+        background: #234C50;
+        color: #cccccc;
+        font-size: 18px;
+
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 `
 
@@ -100,7 +109,7 @@ const ContactItem = styled.input`
     border: none;
     border-bottom: 2px solid black;
     outline: none;
-    background: #aaaaaa;
+    background: #cccccc;
     color: black;
     font-size: 20px;
 `

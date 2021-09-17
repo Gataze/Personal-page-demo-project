@@ -3,13 +3,32 @@ import styled from 'styled-components';
 
 const Nav = () => {
 
+    const handleClick = (e) => {
+        e.preventDefault()
+        const target = e.target.getAttribute('href')
+        const location = document.querySelector(target).offsetTop
+        
+        window.scrollTo({
+            left: 0,
+            top: location
+        })
+    }
+
     return ( 
         <NavWrapper>
             <NavList>
-                <NavItem>ILLUSTRATIONS</NavItem>
-                <NavItem>3D</NavItem>
-                <NavItem>BOOKS</NavItem>
-                <NavItem>ABOUT</NavItem>
+                <NavItem>
+                    <a onClick={handleClick} href='#home'> strona głowna</a>
+                </NavItem>
+                <NavItem>
+                    <a onClick={handleClick} href='#about'> o mnie.</a>
+                </NavItem>
+                <NavItem>
+                    <a onClick={handleClick} href='#projects'> moje prace</a>
+                </NavItem>
+                <NavItem>
+                    <a onClick={handleClick} href='#contact'> kontakt</a>
+                </NavItem>
                 <NavItem><FaLinkedin /></NavItem>
                 <NavItem><FaInstagram /></NavItem>
             </NavList>
@@ -19,16 +38,16 @@ const Nav = () => {
 
 const NavWrapper = styled.nav`
     display: flex;
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    width: 100%;
+    width: 100%;   
     
 `
 
 const NavList = styled.ul`
     display: flex;
     width: 100%;
-    padding: 40px 60px;
+    padding: 30px 37px 0;
     list-style-type: none;
     gap: 20px;
        
@@ -36,11 +55,15 @@ const NavList = styled.ul`
 
 
 const NavItem = styled.li`
-    color: #cccccc;
-    font-size: 20px;
+    color: #bbbbbb;
+    font-size: 22px;
 
     &:nth-child(5) {
         margin-left: auto;
+    }
+
+    a {
+        color: white;
     }
     
 `

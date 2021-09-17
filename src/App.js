@@ -10,6 +10,8 @@ import { useState, useEffect } from "react";
 function App() {
 
   const [offsetY, setOffsetY] = useState(0);
+  
+  
 
     const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -21,14 +23,21 @@ function App() {
     }, [])
 
   return (
-    <div className="App">
-      <Nav />
-      <AppHeader offsetY={offsetY}/>
-      <About2 />
-      <MyWork />
-      <Contact />
-      <Footer />
-    </div>
+   
+       <div className="App">
+        <Nav />
+        
+     
+            <AppHeader offsetY={offsetY}/>
+            <About2 />
+            <MyWork id='projects'/>
+            <Contact id='contact'/>
+            <Footer />
+
+        
+      </div>
+   
+   
   );
 }
 

@@ -4,7 +4,7 @@ import lunaria from "./lunaria.jpg"
 
 const About2 = () => {
     return ( 
-        <AboutWrapper>
+        <AboutWrapper id='about'>
             <AboutContainer>
                 <div>
                     <img src={lunaria} alt="" />
@@ -86,11 +86,13 @@ const About2 = () => {
 }
 
 
+
+
 const AboutWrapper = styled.section`
     display: block;
     position: relative;
-    height: 100vh;
-    padding: 40px 20px;
+    height: calc(100vh - 120px);
+    padding: 120px 20px 0px;
     overflow: hidden;
     background-color: #234C50;
     text-align: left;

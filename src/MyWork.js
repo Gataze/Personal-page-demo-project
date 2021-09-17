@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import iris from "./iris.jpg"
 import snieguliczka from "./snieguliczka.jpg"
-import delphinuim from "./delphinium.jpg"
+import delphinuim from "./delphinium-icon.jpg"
 
 const MyWork = () => {
     return ( 
-        <AppWrapper>
+        <AppWrapper id='projects'>
             <Header>projekty</Header>
             <AppGalleryNav>
                 <p>Ilustracje</p>
