@@ -5,7 +5,7 @@ import mapa from "./pomorzany.jpg"
 const Contact = () => {
     return ( 
         <ContactWrapper id='contact'>
-           
+           <ContactContainer>
                 <ContactForm>
                     <h1>Formularz kontaktowy</h1>
                     <ContactItem placeholder='Imię'></ContactItem>
@@ -14,7 +14,7 @@ const Contact = () => {
                     <ContactItem placeholder='Wiadomość'></ContactItem>
                     <button>Wyślij</button>
                 </ContactForm>
-            
+            </ContactContainer>
         </ContactWrapper>
      );
 }
@@ -22,25 +22,19 @@ const Contact = () => {
 const ContactWrapper = styled.section`
     display: flex;
     position: relative;
-    height: 80vh;
-    border-radius: 20px;
+    justify-content: center;
+    height: 610px;
     background-image: url(${mapa});
     background-size: cover;
     color: #888888;
-    
-    
-    h1 {
-        align-self: flex-start;
-        margin-left: 60px;
-        font-size: 36px;
-        font-weight: 400;     
-        text-transform: uppercase;
-        
+    text-align: left;
+    @media (min-width: 992px) {
+        height: 81vh;
     }
+    
 
     &:before, &:after {
       position: absolute;
-      width: 1093px;
       height: 400px;
       opacity: 0.1;
       color: black;
@@ -51,15 +45,17 @@ const ContactWrapper = styled.section`
       font-size: 126px;
   }
   @media (min-width: 1200px) {
+      width: 1093px;
       font-size: 176px;
   }
 }
 
 &:after {
-  content: 'CONTACT';
+  content: 'CONTACT.';
   z-index: 0;
-  bottom: -40px;
-  left: 10px;
+  top: 00px;
+  right: 10px;
+  font-size: 76px;
  
   @media (min-width: 768px) {
     bottom: -7%;
@@ -78,12 +74,30 @@ const ContactForm = styled.form`
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    width: 600px;
-    margin: 80px 80px -60px auto ;
-    padding: 15px;
-    border-radius: 20px;
-    opacity: .95;
-    background: #cccccc ;
+    width: 100%;
+    height: 700px;
+    opacity: .85;
+    background-color: #cccccc;
+    @media (min-width: 992px) {
+        width: 600px;
+        margin: 120px 80px -60px auto ;
+        padding: 0 15px;
+        border-radius: 20px;
+        opacity: .95;
+    }
+    
+    h1 {
+        width: 80%;
+        margin-left: 0px;
+        color: #555555;
+        font-weight: 400;     
+        text-transform: uppercase;
+        @media (min-width: 992px) {
+            margin-left: 60px;
+            font-size: 36px;
+        }
+    }
+        
 
     button {
         width: 30%;
@@ -95,23 +109,33 @@ const ContactForm = styled.form`
         color: #cccccc;
         font-size: 18px;
 
-
         &:hover {
             opacity: 0.8;
         }
     }
+    
+
+`
+
+const ContactContainer = styled.div`
+    width: 100%;
+    max-width: 1440px;
 `
 
 const ContactItem = styled.input`
     width: 80%;
     height: 50px;
-    margin: 20px;
+    margin: 10px;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     outline: none;
     background: #cccccc;
     color: black;
-    font-size: 20px;
+    font-size: 15px;
+    @media (min-width: 992px) {
+        margin: 20px;
+        font-size: 20px;
+    }
 `
 
 
