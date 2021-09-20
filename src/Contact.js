@@ -75,11 +75,12 @@ const ContactForm = styled.form`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 700px;
+    height: 610px;
     opacity: .85;
     background-color: #cccccc;
     @media (min-width: 992px) {
         width: 600px;
+        height: 700px;
         margin: 120px 80px -60px auto ;
         padding: 0 15px;
         border-radius: 20px;

@@ -6,6 +6,8 @@ const MyWork = () => {
 
 
     const [ImgGroup, setImgGroup] = useState('ilustracje');
+    const [title, setTitle] = useState('')
+    
 
 
     const images = [
@@ -25,7 +27,7 @@ const MyWork = () => {
         },
         {
             id: 3,
-            url: '/delphinium.jpg',
+            url: '/delphinium-icon.jpg',
             theme: 'Łąka',
             title: 'delphinium',
             group: 'ilustracje'
@@ -70,10 +72,30 @@ const MyWork = () => {
     ]
 
 
+ 
+    
+
     const handleClick = (e) => {
-        
         setImgGroup(e.target.title)
+        
     }
+
+
+    const handleHidden = () => {
+        setTitle('')
+    }
+
+    
+        
+        
+
+    
+
+  
+
+ 
+   
+
 
 
     return ( 
@@ -82,39 +104,44 @@ const MyWork = () => {
             <AppGalleryNav>
                 <p title='ilustracje' onClick={handleClick}>Ilustracje</p>
                 <p title='ludzie'  onClick={handleClick}>Ludzie</p>
-                <p title='3d' onClick={handleClick}>Projekty</p>
+                <p title='3d' onClick={handleClick}>Projekty 3D</p>
             </AppGalleryNav>
             <AppGallery>
                 {images.map(image => (
                     (image.group === ImgGroup) ? 
-                        <AppImage key={image.id}>
-                            <img src={image.url} alt="" />
+                        <AppImage key={image.id} >
+                            <img src={image.url} alt="" title={image.url} onClick={(e) => setTitle(e.target.title)}/>
                             <p>{image.theme}</p>
                             <h3>{image.title}</h3>
-                        </AppImage>
-
-                        :
-
-                        null
-
+                            
+                            
+                        </AppImage> : null
+                        
+                ))}  
                 
-                ))}    
+                
+               
             </AppGallery>
+            <AppFull title={title} onClick={handleHidden}>
+                <AppFullImg src={title} alt="lpl" /> 
+            </AppFull>
+            
+
         </AppWrapper>
      );
 }
 
 const AppWrapper = styled.section`
-    display: flex;
+    display: block;
     position: relative;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 50px;
+    padding: 50px 0;
     overflow: hidden; 
     background-color: #98787D;
+    color: black;
+    font-size: 96px;
+    font-weight: 800;
     @media (min-width: 768px) {
-        height: 100vh;
+        height: calc(100vh - 50px);
         padding-bottom: 0px
     }
 
@@ -123,14 +150,11 @@ const AppWrapper = styled.section`
         width: 600px;
         height: 400px;
         opacity: 0.1;
-        color: black;
-        font-size: 96px;
-        font-weight: 800;
         text-align: left;
         @media (min-width: 768px) {
             font-size: 126px;
         }
-        @media (min-width: 1200px) {
+        @media (min-width: 992px) {
             font-size: 176px;
         }
 }
@@ -154,10 +178,10 @@ const AppWrapper = styled.section`
   bottom: -140px;
   left: 10px;
   @media (min-width: 768px) {
-    bottom: -7%;
+    bottom: -26%;
   }
-  @media (min-width: 1200px) {
-    bottom: -220px;
+  @media (min-width: 992px) {
+    bottom: -210px;
     left: -70px;
   }
 }
@@ -172,13 +196,15 @@ const AppGalleryNav = styled.nav`
     display: flex;
     position: relative;
     z-index: 1;
-    margin-bottom: 32px;
+    justify-content: center;
+    margin: 0 0 32px;
     color: #dddddd;
     font-size: 18px;
     gap: 32px;
     @media (min-width: 768px) {
         font-size: 24px;
     }
+
     p {
         cursor: pointer;
     }
@@ -188,18 +214,19 @@ const AppGallery = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 80%;
+    width: 85%;
     justify-items: center;
     gap: 20px;
+    margin: 0 auto;
     @media (min-width: 768px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
-        gap: 0px;
+        justify-content: center;
+        padding: 20px;
     }
 
 `
-
 
 const AppImage = styled.div`
     display: flex;
@@ -212,6 +239,9 @@ const AppImage = styled.div`
         max-width: 50%;
     }
     @media (min-width: 768px) {
+        max-width: 90%;
+    }
+    @media (min-width: 1200px) {
         max-width: 70%;
     }
 
@@ -229,9 +259,35 @@ const AppImage = styled.div`
     
 
     img {
+        
         max-width: 100%;
         box-shadow: 1px 1px 4px #555555;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.02)
+        }
     }
+`
+
+const AppFull = styled.div`
+display: ${({title}) => title? 'flex' : 'none' };
+position: absolute;
+z-index: 1;
+top: 0px;
+left: 0px;
+justify-content: center;
+width: 100%;
+height: 100vh;
+background-color: rgba(0, 0, 0, .5);
+
+`
+
+
+const AppFullImg = styled.img`
+    max-width: 50%;
+    object-fit: contain;
+
 `
  
 export default MyWork;

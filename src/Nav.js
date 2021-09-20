@@ -45,14 +45,17 @@ const Nav = () => {
                 <NavItem >
                     <a onClick={handleClick} href='#contact'> kontakt</a>
                 </NavItem>
+                <div>
                 <NavItem ><FaLinkedin /></NavItem>
                 <NavItem ><FaInstagram /></NavItem>
+                </div>
+                
             </NavList>
             
         </NavWrapper>
         <Burger>
-            <BurgerContainer onClick={handleShow}>
-                <p></p>
+            <BurgerContainer show={show} onClick={handleShow}>
+                <p ></p>
                 <p></p>
                 <p></p>
             </BurgerContainer>
@@ -68,12 +71,12 @@ const Nav = () => {
 const NavWrapper = styled.nav`
     display: flex;
     position: absolute;
-    transform: ${({show}) => show? 'translateY(-100%)' : 'translateY(0%)'};
     z-index: 1;
-    transition: transform 0.5s ease-in-out;
     width: 100%;
+    transform: ${({show}) => show? 'translateY(-100%)' : 'translateY(0%)'};
+    transition: transform 0.5s ease-in-out;
     background-color: rgba(0, 0, 0, .3);
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
         position:  fixed;
         align-items: center;
         height: 70px;
@@ -92,11 +95,16 @@ const NavList = styled.ul`
     padding: 0px 10px 0;
     list-style-type: none;
     gap: 30px;
-    @media (min-width: 576px) {
+    @media (min-width: 768px) {
         flex-flow: row;
         margin: 0px auto;
         gap: 20px;
     } 
+
+    div li {
+        margin: 10px;
+        float: left;
+    }
     
 `
 
@@ -119,7 +127,7 @@ const NavItem = styled.li`
         text-decoration: none;
 
         @media (min-width: 576px) {
-            font-size: 22px;
+            font-size: 25px;
         }
 
         @media (min-width: 1200px) {
@@ -131,29 +139,49 @@ const NavItem = styled.li`
 
 const Burger = styled.div`
     position: absolute;
+    top: 25px;
+    right: 25px;
     width: 40px;
     height: 35px;
-    right: 15px;
-    top: 15px;
-    
+    @media (min-width: 768px) {
+        top: 20px;
+    }
 `
 
 const BurgerContainer = styled.div`
+    display: flex;
     position: absolute;
     z-index: 2;
-    width: 40px;
-    height: 35px;
-    display: flex;
     flex-flow: column;
     justify-content: space-between;
-    
-
+    width: 40px;
+    height: 35px;
+     
     p {
-        margin: 0;
+        position: relative;
         width: 40px;
         height: 5px;
-        background-color: #dddddd;
+        margin: 0;
+        transition: ${({show}) => show? 'transform 0.15s ease-in-out, top 0.2s ease-in 0.15s' : 'top 0.15s ease-in-out, transform 0.2s ease-in 0.15s'};
         border-radius: 4px;
+        background-color: #dddddd;
+    }
+
+    p:nth-child(1) {
+        top:  ${({show}) => show? '0px' : '15px'};
+        transform: ${({show}) => show? 'rotate(0deg)' : 'rotate(45deg)'};
+        
+    }
+
+    p:nth-child(2) {
+        display: ${({show}) => show? 'block' : 'none'};
+
+    }
+    
+    p:nth-child(3) {
+        top: ${({show}) => show? '0px' : '-15px'};
+        transform: ${({show}) => show? 'rotate(0deg)' : 'rotate(135deg)' };
+
     }
 `
  
