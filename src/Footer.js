@@ -28,8 +28,6 @@ const Footer = () => {
      );
 }
 
-
-
 const AppFooter = styled.footer`
     display: flex;
     flex-flow: column;
