@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import lunaria from "./lunaria.jpg"
+import lunaria from "./img/lunaria.jpg"
 
 
-const About2 = () => {
+const About = () => {
     return ( 
         <AboutWrapper id='about'>
             <AboutContainer>
@@ -416,4 +416,4 @@ const AboutSkills = styled.div`
     }
 `
  
-export default About2;
+export default About;

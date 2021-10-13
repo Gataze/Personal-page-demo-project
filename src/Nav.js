@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -7,7 +6,6 @@ import styled from 'styled-components';
 const Nav = () => {
 
     const [show, setShow] = useState(true)
-
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -20,14 +18,11 @@ const Nav = () => {
         })
     }
 
-
     const handleShow = () => {
         setShow(prevState => 
             prevState = !prevState
             )
     }
-
-
 
     return ( 
         <>
@@ -63,9 +58,6 @@ const Nav = () => {
         </>
      );
 }
-
-
-
 
 
 const NavWrapper = styled.nav`
@@ -135,7 +127,6 @@ const NavItem = styled.li`
         }
     }  
 `
-
 
 const Burger = styled.div`
     position: absolute;

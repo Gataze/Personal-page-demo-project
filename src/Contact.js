@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import mapa from "./pomorzany.jpg"
+import mapa from "./img/pomorzany.jpg"
 
 
 const Contact = () => {

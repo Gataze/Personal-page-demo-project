@@ -1,7 +1,7 @@
 
 import styled from "styled-components"
-import tlo from './tlo.png'
-import reka from './reka.png'
+import tlo from './img/tlo.png'
+import reka from './img/reka.png'
 
 const AppHeader = ({offsetY}) => {
 

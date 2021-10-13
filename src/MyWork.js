@@ -4,65 +4,61 @@ import styled from "styled-components";
 
 const MyWork = () => {
 
-
     const [ImgGroup, setImgGroup] = useState('ilustracje');
     const [title, setTitle] = useState('')
-    
-
-
     const images = [
         {
             id: 1,
-            url: '/iris.jpg',
+            url: 'images/iris.jpg',
             theme: 'Kwiaty',
             title: 'irysy',
             group: 'ilustracje'
         },
         {
             id: 2,
-            url: '/snieguliczka.jpg',
+            url: 'images/snieguliczka.jpg',
             theme: 'Przyroda niestandardowa',
             title: 'śnieguliczka',
             group: 'ilustracje'
         },
         {
             id: 3,
-            url: '/delphinium-icon.jpg',
+            url: 'images/delphinium-icon.jpg',
             theme: 'Łąka',
             title: 'delphinium',
             group: 'ilustracje'
         },
         {
             id: 4,
-            url: '/kusama.jpg',
+            url: 'images/kusama.jpg',
             theme: 'Japońskie',
             title: 'kusama',
             group: 'ludzie'
         },
         {
             id: 5,
-            url: '/dianad.jpg',
+            url: 'images/dianad.jpg',
             theme: 'Mitologia',
             title: 'dianad',
             group: 'ludzie'
         },
         {
             id: 6,
-            url: '/lunaria.jpg',
+            url: 'images/lunaria.jpg',
             theme: 'Rosliny',
             title: 'lunaria',
             group: 'ludzie'
         },
         {
             id: 7,
-            url: 'sedesowiec.png',
+            url: 'images/sedesowiec.png',
             theme: 'Architektura',
             title: 'sedesowiec',
             group: '3d'
         },
         {
             id: 8,
-            url: '/renderek.png',
+            url: 'images/renderek.png',
             theme: 'Rendery',
             title: 'renderek',
             group: '3d'
@@ -71,32 +67,14 @@ const MyWork = () => {
 
     ]
 
-
- 
-    
-
     const handleClick = (e) => {
         setImgGroup(e.target.title)
         
     }
 
-
     const handleHidden = () => {
         setTitle('')
     }
-
-    
-        
-        
-
-    
-
-  
-
- 
-   
-
-
 
     return ( 
         <AppWrapper id='projects'>
@@ -113,20 +91,13 @@ const MyWork = () => {
                             <img src={image.url} alt="" title={image.url} onClick={(e) => setTitle(e.target.title)}/>
                             <p>{image.theme}</p>
                             <h3>{image.title}</h3>
-                            
-                            
-                        </AppImage> : null
-                        
+                        </AppImage> : null         
                 ))}  
-                
-                
-               
+    
             </AppGallery>
             <AppFull title={title} onClick={handleHidden}>
                 <AppFullImg src={title} alt="lpl" /> 
             </AppFull>
-            
-
         </AppWrapper>
      );
 }
@@ -282,7 +253,6 @@ height: 100vh;
 background-color: rgba(0, 0, 0, .5);
 
 `
-
 
 const AppFullImg = styled.img`
     max-width: 50%;

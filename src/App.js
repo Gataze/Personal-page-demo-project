@@ -1,7 +1,7 @@
 import './App.css';
 import Nav from './Nav';
 import AppHeader from './AppHeader';
-import About2 from './About2';
+import About from './About';
 import MyWork from './MyWork';
 import Contact from './Contact';
 import Footer from './Footer';
@@ -11,8 +11,6 @@ function App() {
 
   const [offsetY, setOffsetY] = useState(0);
   
-  
-
     const handleScroll = () => setOffsetY(window.pageYOffset);
 
     useEffect(() => {
@@ -26,18 +24,13 @@ function App() {
    
        <div className="App">
         <Nav />
-        
-     
             <AppHeader offsetY={offsetY}/>
-            <About2 />
+            <About />
             <MyWork id='projects'/>
             <Contact id='contact'/>
             <Footer />
-
-        
       </div>
-   
-   
+
   );
 }
 
