@@ -23,7 +23,7 @@ const ContactWrapper = styled.section`
     display: flex;
     position: relative;
     justify-content: center;
-    height: 610px;
+    height: 610px;  
     background-image: url(${mapa});
     background-size: cover;
     color: #888888;

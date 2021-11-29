@@ -203,7 +203,7 @@ const AppImage = styled.div`
     display: flex;
     flex-flow: column;
     justify-content: center;
-    max-width: 70%;
+    max-width: 100%;
     padding: 10px;
     color: #dddddd; 
     @media (min-width: 576px) {
@@ -214,6 +214,9 @@ const AppImage = styled.div`
     }
     @media (min-width: 1200px) {
         max-width: 70%;
+    }
+    @media (min-width: 1400px) {
+        max-width: 60%;
     }
 
     p {
@@ -257,6 +260,7 @@ background-color: rgba(0, 0, 0, .5);
 const AppFullImg = styled.img`
     max-width: 50%;
     object-fit: contain;
+    
 
 `
  
