@@ -50,7 +50,7 @@ const Nav = () => {
         </NavWrapper>
         <Burger>
             <BurgerContainer show={show} onClick={handleShow}>
-                <p ></p>
+                <p></p>
                 <p></p>
                 <p></p>
             </BurgerContainer>

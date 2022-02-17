@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import lunaria from "./img/lunaria.jpg"
+import lunaria from "../images/lunaria.jpg"
 
 
 const About = () => {
